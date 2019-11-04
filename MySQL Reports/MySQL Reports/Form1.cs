@@ -15,6 +15,9 @@ namespace MySQL_Reports
         public Form1()
         {
             InitializeComponent();
+            DBConn conn = new DBConn();
+
+            conn.OpenConn("127.0.0.1", "3306", "root","taquitos02","sakila");
             
         }
 
