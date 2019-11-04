@@ -15,6 +15,7 @@ namespace MySQL_Reports
         public Form1()
         {
             InitializeComponent();
+            
         }
     }
 }
