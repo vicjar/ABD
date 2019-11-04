@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 namespace MySQL_Reports
 {
     class DBConn
-    {
+    {/*
         string server, port, user, pass, database;
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=test;";
         MySqlConnection databaseConnection;
@@ -30,7 +30,7 @@ namespace MySQL_Reports
 
         }
         
-        /*
+        
         Tu consulta en SQL
         string query = "SELECT * FROM user";
 
