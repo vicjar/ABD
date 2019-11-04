@@ -173,6 +173,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.SALIR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MINIMIZAR)).EndInit();

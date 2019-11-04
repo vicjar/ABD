@@ -16,5 +16,15 @@ namespace MySQL_Reports
         {
             InitializeComponent();
         }
+
+        private void DataExpences_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Pantalla2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
