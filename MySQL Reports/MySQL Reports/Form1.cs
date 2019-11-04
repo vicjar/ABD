@@ -17,5 +17,20 @@ namespace MySQL_Reports
             InitializeComponent();
             
         }
+
+        private void SALIR_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MAXIMIZAR_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void MINIMIZAR_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
