@@ -152,7 +152,7 @@
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Candara Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.ForeColor = System.Drawing.Color.DimGray;
-            this.lbltitle.Location = new System.Drawing.Point(73, 56);
+            this.lbltitle.Location = new System.Drawing.Point(121, 72);
             this.lbltitle.Name = "lbltitle";
             this.lbltitle.Size = new System.Drawing.Size(104, 35);
             this.lbltitle.TabIndex = 70;

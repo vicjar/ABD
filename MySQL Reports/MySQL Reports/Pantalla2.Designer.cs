@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla2));
             this.dataExpences = new System.Windows.Forms.DataGridView();
-            this.SAVE = new System.Windows.Forms.Button();
+            this.btnprint = new System.Windows.Forms.Button();
             this.SALIR = new System.Windows.Forms.PictureBox();
             this.MINIMIZAR = new System.Windows.Forms.PictureBox();
             this.shape = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -54,7 +54,7 @@
             this.dataExpences.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataExpences.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataExpences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataExpences.Location = new System.Drawing.Point(34, 288);
+            this.dataExpences.Location = new System.Drawing.Point(34, 300);
             this.dataExpences.Name = "dataExpences";
             this.dataExpences.ReadOnly = true;
             this.dataExpences.RowHeadersVisible = false;
@@ -65,20 +65,20 @@
             this.dataExpences.TabIndex = 77;
             this.dataExpences.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataExpences_CellContentClick);
             // 
-            // SAVE
+            // btnprint
             // 
-            this.SAVE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.SAVE.FlatAppearance.BorderSize = 0;
-            this.SAVE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.SAVE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SAVE.ForeColor = System.Drawing.Color.Gainsboro;
-            this.SAVE.Location = new System.Drawing.Point(1003, 579);
-            this.SAVE.Name = "SAVE";
-            this.SAVE.Size = new System.Drawing.Size(210, 37);
-            this.SAVE.TabIndex = 78;
-            this.SAVE.Text = "SAVE";
-            this.SAVE.UseVisualStyleBackColor = false;
+            this.btnprint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnprint.FlatAppearance.BorderSize = 0;
+            this.btnprint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnprint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprint.ForeColor = System.Drawing.Color.DimGray;
+            this.btnprint.Location = new System.Drawing.Point(1003, 579);
+            this.btnprint.Name = "btnprint";
+            this.btnprint.Size = new System.Drawing.Size(210, 37);
+            this.btnprint.TabIndex = 78;
+            this.btnprint.Text = "PRINT";
+            this.btnprint.UseVisualStyleBackColor = false;
             // 
             // SALIR
             // 
@@ -88,6 +88,7 @@
             this.SALIR.Size = new System.Drawing.Size(61, 46);
             this.SALIR.TabIndex = 80;
             this.SALIR.TabStop = false;
+            this.SALIR.Click += new System.EventHandler(this.SALIR_Click);
             // 
             // MINIMIZAR
             // 
@@ -97,6 +98,7 @@
             this.MINIMIZAR.Size = new System.Drawing.Size(76, 46);
             this.MINIMIZAR.TabIndex = 79;
             this.MINIMIZAR.TabStop = false;
+            this.MINIMIZAR.Click += new System.EventHandler(this.MINIMIZAR_Click);
             // 
             // shape
             // 
@@ -121,7 +123,7 @@
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Candara Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.ForeColor = System.Drawing.Color.DimGray;
-            this.lbltitle.Location = new System.Drawing.Point(80, 76);
+            this.lbltitle.Location = new System.Drawing.Point(131, 98);
             this.lbltitle.Name = "lbltitle";
             this.lbltitle.Size = new System.Drawing.Size(203, 35);
             this.lbltitle.TabIndex = 82;
@@ -136,12 +138,13 @@
             this.btntable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntable.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntable.ForeColor = System.Drawing.Color.DimGray;
-            this.btntable.Location = new System.Drawing.Point(-36, 208);
+            this.btntable.Location = new System.Drawing.Point(-36, 261);
             this.btntable.Name = "btntable";
             this.btntable.Size = new System.Drawing.Size(210, 37);
             this.btntable.TabIndex = 83;
             this.btntable.Text = "TABLES";
             this.btntable.UseVisualStyleBackColor = false;
+            this.btntable.Click += new System.EventHandler(this.Btntable_Click);
             // 
             // btndata
             // 
@@ -152,7 +155,7 @@
             this.btndata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndata.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndata.ForeColor = System.Drawing.Color.DimGray;
-            this.btndata.Location = new System.Drawing.Point(-19, 165);
+            this.btndata.Location = new System.Drawing.Point(-19, 218);
             this.btndata.Name = "btndata";
             this.btndata.Size = new System.Drawing.Size(210, 37);
             this.btndata.TabIndex = 84;
@@ -162,21 +165,25 @@
             // 
             // cmbdata
             // 
+            this.cmbdata.BackColor = System.Drawing.Color.DimGray;
             this.cmbdata.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbdata.FormattingEnabled = true;
-            this.cmbdata.Location = new System.Drawing.Point(162, 174);
+            this.cmbdata.Location = new System.Drawing.Point(214, 227);
             this.cmbdata.Name = "cmbdata";
             this.cmbdata.Size = new System.Drawing.Size(189, 24);
             this.cmbdata.TabIndex = 85;
+            this.cmbdata.Visible = false;
             // 
             // cmbtable
             // 
+            this.cmbtable.BackColor = System.Drawing.Color.DimGray;
             this.cmbtable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbtable.FormattingEnabled = true;
-            this.cmbtable.Location = new System.Drawing.Point(162, 208);
+            this.cmbtable.Location = new System.Drawing.Point(214, 261);
             this.cmbtable.Name = "cmbtable";
             this.cmbtable.Size = new System.Drawing.Size(189, 24);
             this.cmbtable.TabIndex = 86;
+            this.cmbtable.Visible = false;
             // 
             // Pantalla2
             // 
@@ -191,7 +198,7 @@
             this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.SALIR);
             this.Controls.Add(this.MINIMIZAR);
-            this.Controls.Add(this.SAVE);
+            this.Controls.Add(this.btnprint);
             this.Controls.Add(this.dataExpences);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -210,7 +217,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataExpences;
-        private System.Windows.Forms.Button SAVE;
+        private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.PictureBox SALIR;
         private System.Windows.Forms.PictureBox MINIMIZAR;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape shape;

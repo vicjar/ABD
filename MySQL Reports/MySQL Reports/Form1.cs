@@ -19,11 +19,11 @@ namespace MySQL_Reports
         }
 
         private void Btnlog_Click(object sender, EventArgs e)
-        {/*
+        {
             Pantalla2 H = new Pantalla2();
             H.Show();
             this.Hide();
-         */
+         /*
             if (string.IsNullOrWhiteSpace(txtuser.Text) || string.IsNullOrWhiteSpace(txtpass.Text))
             {
                 MessageBox.Show("Usuario o contraseña incorrectos");
@@ -43,6 +43,7 @@ namespace MySQL_Reports
                     MessageBox.Show("Usuario o contraseña incorrectos");
                 }
             }
+            */
         }
 
         private void Txtuser_Enter(object sender, EventArgs e)
