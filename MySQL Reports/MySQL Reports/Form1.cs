@@ -15,10 +15,7 @@ namespace MySQL_Reports
         public Form1()
         {
             InitializeComponent();
-            DBConn conn = new DBConn();
-
-           // conn.OpenConn("127.0.0.1", "3306", "root","taquitos02","sakila");
-            
+         
         }
 
         private void Btnlog_Click(object sender, EventArgs e)
@@ -35,11 +32,11 @@ namespace MySQL_Reports
             {
                 if ((txtuser.Text == "CYNTHIA") || (txtuser.Text == "VICTOR") & (txtpass.Text == "1234"))
                 {
-                    /*
+                    
                      Pantalla2 H = new Pantalla2();
                      H.Show();
                      this.Hide();
-                    */
+                    
                 }
                 else
                 {
@@ -72,7 +69,7 @@ namespace MySQL_Reports
             if (txtpass.Text == "PASSWORD")
             {
                 txtpass.Text = "";
-                txtpass.ForeColor = Color.White;
+                txtpass.ForeColor = Color.DimGray;
                 txtpass.PasswordChar = '*';
             }
         }

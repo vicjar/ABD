@@ -35,10 +35,10 @@
             this.txtuser = new System.Windows.Forms.TextBox();
             this.btnlog = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.line2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.line = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shape = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.lbltitle = new System.Windows.Forms.Label();
-            this.line = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.line2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             ((System.ComponentModel.ISupportInitialize)(this.SALIR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MINIMIZAR)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             this.txtpass.Location = new System.Drawing.Point(106, 257);
             this.txtpass.Multiline = true;
             this.txtpass.Name = "txtpass";
-            this.txtpass.Size = new System.Drawing.Size(472, 30);
+            this.txtpass.Size = new System.Drawing.Size(481, 30);
             this.txtpass.TabIndex = 37;
             this.txtpass.Text = "PASSWORD";
             this.txtpass.Enter += new System.EventHandler(this.Tatpass_Enter);
@@ -87,7 +87,7 @@
             this.txtuser.Location = new System.Drawing.Point(106, 193);
             this.txtuser.Multiline = true;
             this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(472, 30);
+            this.txtuser.Size = new System.Drawing.Size(481, 30);
             this.txtuser.TabIndex = 36;
             this.txtuser.Text = "USER";
             this.txtuser.Enter += new System.EventHandler(this.Txtuser_Enter);
@@ -122,6 +122,24 @@
             this.shapeContainer1.TabIndex = 38;
             this.shapeContainer1.TabStop = false;
             // 
+            // line2
+            // 
+            this.line2.BorderColor = System.Drawing.Color.DimGray;
+            this.line2.Name = "line2";
+            this.line2.X1 = 438;
+            this.line2.X2 = 80;
+            this.line2.Y1 = 234;
+            this.line2.Y2 = 234;
+            // 
+            // line
+            // 
+            this.line.BorderColor = System.Drawing.Color.DimGray;
+            this.line.Name = "line";
+            this.line.X1 = 438;
+            this.line.X2 = 80;
+            this.line.Y1 = 181;
+            this.line.Y2 = 181;
+            // 
             // shape
             // 
             this.shape.BorderColor = System.Drawing.Color.DimGray;
@@ -139,24 +157,6 @@
             this.lbltitle.Size = new System.Drawing.Size(104, 35);
             this.lbltitle.TabIndex = 70;
             this.lbltitle.Text = "LOG IN ";
-            // 
-            // line
-            // 
-            this.line.BorderColor = System.Drawing.Color.DimGray;
-            this.line.Name = "line";
-            this.line.X1 = 570;
-            this.line.X2 = 111;
-            this.line.Y1 = 228;
-            this.line.Y2 = 228;
-            // 
-            // line2
-            // 
-            this.line2.BorderColor = System.Drawing.Color.DimGray;
-            this.line2.Name = "line2";
-            this.line2.X1 = 572;
-            this.line2.X2 = 113;
-            this.line2.Y1 = 288;
-            this.line2.Y2 = 288;
             // 
             // Form1
             // 

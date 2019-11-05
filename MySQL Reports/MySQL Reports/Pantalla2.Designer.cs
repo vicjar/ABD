@@ -158,6 +158,7 @@
             this.btndata.TabIndex = 84;
             this.btndata.Text = "DATABASES";
             this.btndata.UseVisualStyleBackColor = false;
+            this.btndata.Click += new System.EventHandler(this.Btndata_Click);
             // 
             // cmbdata
             // 
