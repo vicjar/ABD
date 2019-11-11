@@ -15,7 +15,7 @@ namespace MySQL_Reports
         public Form1()
         {
             InitializeComponent();
-            DBConn conn = new DBConn();
+         //   DBConn conn = new DBConn();
 
            // conn.OpenConn("127.0.0.1", "3306", "root","taquitos02","sakila");
             
@@ -35,11 +35,11 @@ namespace MySQL_Reports
             {
                 if ((txtuser.Text == "CYNTHIA") || (txtuser.Text == "VICTOR") & (txtpass.Text == "1234"))
                 {
-                    /*
+                    
                      Pantalla2 H = new Pantalla2();
                      H.Show();
                      this.Hide();
-                    */
+                    
                 }
                 else
                 {

@@ -34,7 +34,7 @@
             this.txtpass = new System.Windows.Forms.TextBox();
             this.txtuser = new System.Windows.Forms.TextBox();
             this.btnlog = new System.Windows.Forms.Button();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            //this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shape = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.lbltitle = new System.Windows.Forms.Label();
             this.line = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -111,7 +111,7 @@
             // 
             // shapeContainer1
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+           /* this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
@@ -121,7 +121,7 @@
             this.shapeContainer1.Size = new System.Drawing.Size(859, 459);
             this.shapeContainer1.TabIndex = 38;
             this.shapeContainer1.TabStop = false;
-            // 
+            */// 
             // shape
             // 
             this.shape.BorderColor = System.Drawing.Color.DimGray;
@@ -170,7 +170,7 @@
             this.Controls.Add(this.btnlog);
             this.Controls.Add(this.SALIR);
             this.Controls.Add(this.MINIMIZAR);
-            this.Controls.Add(this.shapeContainer1);
+            //this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -189,7 +189,7 @@
         private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Button btnlog;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        //private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape line2;
         private Microsoft.VisualBasic.PowerPacks.LineShape line;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape shape;
