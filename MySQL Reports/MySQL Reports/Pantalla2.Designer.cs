@@ -58,7 +58,7 @@
             this.dataExpences.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataExpences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataExpences.Location = new System.Drawing.Point(26, 244);
-            this.dataExpences.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataExpences.Margin = new System.Windows.Forms.Padding(2);
             this.dataExpences.Name = "dataExpences";
             this.dataExpences.ReadOnly = true;
             this.dataExpences.RowHeadersVisible = false;
@@ -78,18 +78,19 @@
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprint.ForeColor = System.Drawing.Color.DimGray;
             this.btnprint.Location = new System.Drawing.Point(752, 470);
-            this.btnprint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnprint.Margin = new System.Windows.Forms.Padding(2);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(158, 30);
             this.btnprint.TabIndex = 78;
             this.btnprint.Text = "PRINT";
             this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // SALIR
             // 
             this.SALIR.Image = ((System.Drawing.Image)(resources.GetObject("SALIR.Image")));
             this.SALIR.Location = new System.Drawing.Point(864, 22);
-            this.SALIR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SALIR.Margin = new System.Windows.Forms.Padding(2);
             this.SALIR.Name = "SALIR";
             this.SALIR.Size = new System.Drawing.Size(46, 37);
             this.SALIR.TabIndex = 80;
@@ -100,7 +101,7 @@
             // 
             this.MINIMIZAR.Image = ((System.Drawing.Image)(resources.GetObject("MINIMIZAR.Image")));
             this.MINIMIZAR.Location = new System.Drawing.Point(830, 22);
-            this.MINIMIZAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
             this.MINIMIZAR.Name = "MINIMIZAR";
             this.MINIMIZAR.Size = new System.Drawing.Size(57, 37);
             this.MINIMIZAR.TabIndex = 79;
@@ -147,7 +148,7 @@
             this.btntable.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntable.ForeColor = System.Drawing.Color.DimGray;
             this.btntable.Location = new System.Drawing.Point(-27, 212);
-            this.btntable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btntable.Margin = new System.Windows.Forms.Padding(2);
             this.btntable.Name = "btntable";
             this.btntable.Size = new System.Drawing.Size(158, 30);
             this.btntable.TabIndex = 83;
@@ -165,7 +166,7 @@
             this.btndata.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndata.ForeColor = System.Drawing.Color.DimGray;
             this.btndata.Location = new System.Drawing.Point(-14, 177);
-            this.btndata.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btndata.Margin = new System.Windows.Forms.Padding(2);
             this.btndata.Name = "btndata";
             this.btndata.Size = new System.Drawing.Size(158, 30);
             this.btndata.TabIndex = 84;
@@ -179,7 +180,7 @@
             this.cmbdata.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbdata.FormattingEnabled = true;
             this.cmbdata.Location = new System.Drawing.Point(160, 184);
-            this.cmbdata.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbdata.Margin = new System.Windows.Forms.Padding(2);
             this.cmbdata.Name = "cmbdata";
             this.cmbdata.Size = new System.Drawing.Size(143, 21);
             this.cmbdata.TabIndex = 85;
@@ -192,7 +193,7 @@
             this.cmbtable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbtable.FormattingEnabled = true;
             this.cmbtable.Location = new System.Drawing.Point(160, 212);
-            this.cmbtable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbtable.Margin = new System.Windows.Forms.Padding(2);
             this.cmbtable.Name = "cmbtable";
             this.cmbtable.Size = new System.Drawing.Size(143, 21);
             this.cmbtable.TabIndex = 86;
@@ -267,7 +268,7 @@
             this.Controls.Add(this.dataExpences);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Pantalla2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla2";

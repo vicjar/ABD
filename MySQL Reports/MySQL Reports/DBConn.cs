@@ -38,7 +38,8 @@ namespace MySQL_Reports
         }
         public void Open()
         {
-            databaseConnection.Open();
+            if (databaseConnection.State.ToString() != "Open")
+                databaseConnection.Open();
         }
         public void Use(string db)
         {
