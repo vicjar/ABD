@@ -39,7 +39,6 @@ namespace MySQL_Reports
         private void cmbdata_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbtable.Items.Clear();
-            MessageBox.Show("se agregaron las tablas al combo box" + cmbdata.SelectedItem.ToString());
             conn.Use(cmbdata.SelectedItem.ToString());
             string[] tables = conn.ShowTables(cmbdata.SelectedItem.ToString()).Split(',');
 
@@ -54,7 +53,6 @@ namespace MySQL_Reports
         private void cmbtable_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbcolumns.Items.Clear();
-            MessageBox.Show("se agregaron las tablas al combo box" + cmbtable.SelectedItem.ToString());
             conn.Use(cmbdata.SelectedItem.ToString());
             string[] columns = conn.ShowColumns(cmbdata.SelectedItem.ToString(), cmbtable.SelectedItem.ToString()).Split(',');
 
