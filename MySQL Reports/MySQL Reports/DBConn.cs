@@ -11,9 +11,6 @@ namespace MySQL_Reports
 {
     class DBConn
     {
-
-        string server, port, user, pass, database;
-
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=test;";
         MySqlConnection databaseConnection;
        
@@ -21,10 +18,12 @@ namespace MySQL_Reports
         {
             try
             {
-                connectionString = "datasource=" + server + ";port=" + port + ";username=" + user + ";password=" + pass + ";database=" + database + ";";
+                connectionString = "datasource=" + server + ";port=" + port + ";username=" + user
+                + ";password=" + pass + ";database=" + database + ";";
+
                 databaseConnection = new MySqlConnection(connectionString);
                 databaseConnection.Open();
-                MessageBox.Show("Se establecio la conexion");
+             
             }
             catch(Exception ex)
             {
@@ -43,7 +42,6 @@ namespace MySQL_Reports
         }
         public void Use(string db)
         {
-            //Open();
             string query = "USE" + db + ";";
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -52,7 +50,7 @@ namespace MySQL_Reports
         {
             string query = "SHOW DATABASES;";
             string row="";
-            //Open();
+            
             try
             {
                 MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -77,7 +75,6 @@ namespace MySQL_Reports
             }
             catch (Exception e)
             {
-                MessageBox.Show("Trono al ejecutar  SHOW DATABASES;" + e);
                 CloseConn();
                 return row;
             }
@@ -112,14 +109,15 @@ namespace MySQL_Reports
             }
             catch (Exception e)
             {
-                MessageBox.Show("Trono al ejecutar  SHOW TABLES;" + e);
                 CloseConn();
                 return row;
             }
         }
         public string ShowColumns(string db, string table)
         {
-            string query = "SELECT COLUMN_NAME FROM information_schema.columns WHERE table_schema='"+db+"' AND table_name='"+table+"';";
+            string query = "SELECT COLUMN_NAME FROM information_schema.columns WHERE table_schema='"
+            +db+"' AND table_name='"+table+"';";
+
             string row = "";
             Open();
             try
@@ -146,8 +144,7 @@ namespace MySQL_Reports
             }
             catch (Exception e)
             {
-                MessageBox.Show("Trono al ejecutar  SHOW COLUMNS FROM;" + e);
-                CloseConn();
+               CloseConn();
                 return row;
             }
         }

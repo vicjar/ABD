@@ -17,51 +17,25 @@ namespace MySQL_Reports
         public Pantalla2()
         {
             InitializeComponent();
-            conn.OpenConn("127.0.0.1", "3306", "root", "taquitos02", "sakila");
-        }
 
-        private void Btndata_Click(object sender, EventArgs e)
-        {
-            cmbdata.Visible = true;
-        }
-        private void Btntable_Click(object sender, EventArgs e)
-        {
-            cmbtable.Visible = true;
-        }
+            //SERVIDOR CYNTHIA
+            conn.OpenConn("127.0.0.1", "3306", "root", "Galletas21", "sakila");
 
-        private void SALIR_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+            // SERVIDOR VICTOR
+            //conn.OpenConn("127.0.0.1", "3306", "root", "taquitos02", "sakila");
 
-        private void MINIMIZAR_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void DataExpences_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Pantalla2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void connect_Click(object sender, EventArgs e)
-        {
             cmbtable.Items.Clear();
-            MessageBox.Show("se agregaron las bases de datos al combo box");
+            
             string[] bds = conn.ShowDataBases().Split(',');
 
             foreach (var bd in bds)
             {
                 cmbdata.Items.Add(bd);
             }
-            cmbdata.Visible = true;
+           cmbdata.Visible = true;
         }
 
+       
         private void cmbdata_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbtable.Items.Clear();
@@ -74,6 +48,7 @@ namespace MySQL_Reports
                 cmbtable.Items.Add(table);
             }
             cmbtable.Visible = true;
+            
         }
 
         private void cmbtable_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,6 +84,70 @@ namespace MySQL_Reports
             printer.FooterSpacing = 15;
             printer.PrintDataGridView(dataExpences);
         }
+        private void Btntable_Click(object sender, EventArgs e)
+        {
+        }
+        private void Btndata_Click(object sender, EventArgs e)
+        {
+            cmbdata.Visible = true;
+        }
 
+        private void TxtFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFiltrar.Text != "")
+            {
+                dataExpences.CurrentCell = null;
+
+                foreach (DataGridViewRow r in dataExpences.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach (DataGridViewRow r in dataExpences.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(txtFiltrar.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void TxtFiltrar_Enter(object sender, EventArgs e)
+        {
+            if (txtFiltrar.Text == " FILTER")
+            {
+                txtFiltrar.Text = "";
+                txtFiltrar.ForeColor = Color.White;
+            }
+        }
+
+        private void TxtFiltrar_Leave(object sender, EventArgs e)
+        {
+            if (txtFiltrar.Text == "")
+            {
+                txtFiltrar.Text = " FILTER";
+                txtFiltrar.ForeColor = Color.DimGray;
+            }
+        }
+        private void SALIR_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MINIMIZAR_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void DataExpences_CellContentClick(object sender, DataGridViewCellEventArgs e) {  }
+        private void Pantalla2_Load(object sender, EventArgs e)  { }
+        private void RectangleShape1_Click(object sender, EventArgs e) { }
+
+       
     }
 }

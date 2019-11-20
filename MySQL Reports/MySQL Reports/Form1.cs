@@ -92,5 +92,15 @@ namespace MySQL_Reports
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void RectangleShape1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txtuser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
