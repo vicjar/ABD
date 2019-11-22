@@ -13,8 +13,10 @@ namespace MySQL_Reports
     {
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=test;";
         MySqlConnection databaseConnection;
-       
-       public void OpenConn(string server, string port, string user, string pass, string database)
+        MySqlDataAdapter sa = new MySqlDataAdapter();
+        string queryGrid="";
+        string columnas = "";
+        public void OpenConn(string server, string port, string user, string pass, string database)
         {
             try
             {
@@ -148,16 +150,56 @@ namespace MySQL_Reports
                 return row;
             }
         }
-        public void FillGrid(DataGridView grid, string db)
+        public void FillGrid(DataGridView grid, string table, string column)
         {
             Open();
-            string query = "SELECT * FROM " + db;
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            MySqlDataAdapter sa = new MySqlDataAdapter();
-            sa.SelectCommand = commandDatabase;
-            DataTable dt = new DataTable();
-            sa.Fill(dt);
-            grid.DataSource = dt;
+            columnas += "," + column;
+            if(columnas.StartsWith(","))
+            {
+                columnas = columnas.Substring(1);
+            }
+            //MessageBox.Show(columnas);
+            queryGrid = "SELECT "+ columnas + " FROM " + table+"; ";
+            MySqlCommand commandDatabase = new MySqlCommand(queryGrid, databaseConnection);
+
+
+            try
+            {
+
+                sa.SelectCommand = commandDatabase;
+
+
+                DataTable dt = new DataTable();
+
+                sa.Fill(dt);
+                grid.DataSource = dt;
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("No se encuentran datos en la tabla");
+            }
+            
+        }
+        public void refresh(DataGridView grid, string table)
+        {
+            queryGrid = "SELECT " + columnas + " FROM " + table + "; ";
+            MySqlCommand commandDatabase = new MySqlCommand(queryGrid, databaseConnection);
+            try
+            {
+
+                sa.SelectCommand = commandDatabase;
+
+                DataTable dt = new DataTable();
+
+                sa.Fill(dt);
+                grid.DataSource = dt;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se encuentran datos en la tabla");
+            }
         }
     }
 }

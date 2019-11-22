@@ -14,28 +14,30 @@ namespace MySQL_Reports
     public partial class Pantalla2 : Form
     {
         DBConn conn = new DBConn();
-        public Pantalla2()
+        string user, pass;
+        public Pantalla2(string user, string pass)
         {
             InitializeComponent();
+            this.user = user;
+            this.pass = pass;
+            conexion(user, pass);
+            
+        }
 
-            //SERVIDOR CYNTHIA
-            conn.OpenConn("127.0.0.1", "3306", "root", "Galletas21", "sakila");
-
-            // SERVIDOR VICTOR
-            //conn.OpenConn("127.0.0.1", "3306", "root", "taquitos02", "sakila");
+        private void conexion(string user, string pass)
+        {
+            conn.OpenConn("127.0.0.1", "3306", user, pass, "sakila");
 
             cmbtable.Items.Clear();
-            
+
             string[] bds = conn.ShowDataBases().Split(',');
 
             foreach (var bd in bds)
             {
                 cmbdata.Items.Add(bd);
             }
-           cmbdata.Visible = true;
+            cmbdata.Visible = true;
         }
-
-       
         private void cmbdata_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbtable.Items.Clear();
@@ -65,7 +67,7 @@ namespace MySQL_Reports
 
         private void cmbcolumns_SelectedIndexChanged(object sender, EventArgs e)
         {
-            conn.FillGrid(dataExpences, cmbtable.SelectedItem.ToString());
+            conn.FillGrid(dataExpences, cmbtable.SelectedItem.ToString(), cmbcolumns.SelectedItem.ToString());
         }
 
         private void btnprint_Click(object sender, EventArgs e)
@@ -142,10 +144,17 @@ namespace MySQL_Reports
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void DataExpences_CellContentClick(object sender, DataGridViewCellEventArgs e) {  }
+        private void DataExpences_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+            dataExpences.Columns.RemoveAt(e.ColumnIndex);
+        }
         private void Pantalla2_Load(object sender, EventArgs e)  { }
         private void RectangleShape1_Click(object sender, EventArgs e) { }
 
-       
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            conn.refresh(dataExpences, cmbtable.SelectedItem.ToString());
+            
+        }
     }
 }

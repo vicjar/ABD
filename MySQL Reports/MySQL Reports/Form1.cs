@@ -26,18 +26,18 @@ namespace MySQL_Reports
             }
             else
             {
-                if ((txtuser.Text == "CYNTHIA") || (txtuser.Text == "VICTOR") & (txtpass.Text == "1234"))
-                {
+                //if ((txtuser.Text == "CYNTHIA") || (txtuser.Text == "VICTOR") & (txtpass.Text == "1234"))
+               // {
                     
-                     Pantalla2 H = new Pantalla2();
+                     Pantalla2 H = new Pantalla2(txtuser.Text, txtpass.Text);
                      H.Show();
                      this.Hide();
                     
-                }
-                else
+                //}
+               /* else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos");
-                }
+                }*/
             }
         }
 
